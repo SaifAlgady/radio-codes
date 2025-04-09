@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Radio Codes - Unlock Your Car Stereo</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --accent-color: #3498db;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .language-switcher {
+            margin-top: 10px;
+        }
+        
+        .language-switcher button {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 0 5px;
+            font-size: 0.9rem;
+        }
+        
+        .language-switcher button.active {
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .hero {
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+        
+        .brands-section {
+            padding: 40px 0;
+            background-color: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        
+        .brand-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .brand-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .brand-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        
+        .brand-card h3 {
+            font-size: 1.1rem;
+            color: var(--dark-color);
+        }
+        
+        .pricing-section {
+            background-color: var(--light-color);
+            padding: 40px 0;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-info {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .highlight {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .testimonials-section {
+            padding: 40px 0;
+            background-color: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        .testimonial-location {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .testimonial-rating {
+            color: #f1c40f;
+            margin-top: 5px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            color: #555;
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-section p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* RTL styles for Arabic */
+        body[dir="rtl"] {
+            text-align: right;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body[dir="rtl"] .testimonial-header {
+            flex-direction: row-reverse;
+        }
+        
+        body[dir="rtl"] .testimonial-avatar {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .brands-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body dir="ltr">
+    <!-- Floating WhatsApp Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/message/UC6YT3LRAJSBM1?src=qr" class="btn btn-whatsapp lang" key="contact_whatsapp">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+    </div>
+    
+    <header>
+        <div class="container">
+            <div class="logo">Car Radio Codes</div>
+            <div class="language-switcher">
+                <button class="active" onclick="switchLanguage('en')">English</button>
+                <button onclick="switchLanguage('ar')">العربية</button>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#brands" class="lang" key="brands">Brands</a></li>
+                <li><a href="#pricing" class="lang" key="pricing">Pricing</a></li>
+                <li><a href="#testimonials" class="lang" key="testimonials">Testimonials</a></li>
+                <li><a href="#contact" class="lang" key="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1 class="lang" key="hero_title">Unlock Your Car Radio Today</h1>
+            <p class="lang" key="hero_text">We provide radio codes for all major car brands. Get your code quickly and easily to restore your car stereo functionality.</p>
+            <a href="https://wa.me/message/UC6YT3LRAJSBM1?src=qr" class="btn btn-whatsapp lang" key="contact_whatsapp">Contact on WhatsApp</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section id="brands" class="brands-section">
+            <h2 class="section-title lang" key="brands_we_serve">Brands We Serve</h2>
+            <div class="brands-grid">
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/mercedes-benz.com" alt="Mercedes">
+                    <h3>Mercedes</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/ford.com" alt="Ford">
+                    <h3>Ford</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/honda.com" alt="Honda">
+                    <h3>Honda</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/bmw.com" alt="BMW">
+                    <h3>BMW</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/vw.com" alt="Volkswagen">
+                    <h3>Volkswagen</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/skoda-auto.com" alt="Skoda">
+                    <h3>Skoda</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/fiat.com" alt="Fiat">
+                    <h3>Fiat</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/opel.com" alt="Opel">
+                    <h3>Opel</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/nissan.com" alt="Nissan">
+                    <h3>Nissan</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/toyota.com" alt="Toyota">
+                    <h3>Toyota</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/mazda.com" alt="Mazda">
+                    <h3>Mazda</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/citroen.com" alt="Citroen">
+                    <h3>Citroen</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/renault.com" alt="Renault">
+                    <h3>Renault</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/peugeot.com" alt="Peugeot">
+                    <h3>Peugeot</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/hyundai.com" alt="Hyundai">
+                    <h3>Hyundai</h3>
+                </div>
+                <div class="brand-card">
+                    <img src="https://logo.clearbit.com/kia.com" alt="Kia">
+                    <h3>Kia</h3>
+                </div>
+            </div>
+        </section>
+        
+        <section id="pricing" class="pricing-section">
+            <h2 class="section-title lang" key="affordable_pricing">Affordable Pricing</h2>
+            <div class="pricing-info">
+                <p class="lang" key="pricing_text">We offer competitive prices for all car radio codes. Our prices vary depending on the brand and model, ranging from <span class="highlight">$1 to $10</span>. Get in touch with us for an exact quote for your specific car radio.</p>
+                <p class="lang" key="fast_service">Fast service with codes delivered within minutes in most cases!</p>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="testimonials-section">
+            <h2 class="section-title lang" key="customer_testimonials">Customer Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MA</div>
+                        <div>
+                            <div class="testimonial-author">Mohamed Ali</div>
+                            <div class="testimonial-location">Tripoli, Libya</div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text lang" key="testimonial1">Got my Toyota radio code in just 10 minutes! Excellent service and very affordable price. Highly recommended!</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">AS</div>
+                        <div>
+                            <div class="testimonial-author">Amira Sassi</div>
+                            <div class="testimonial-location">Tunis, Tunisia</div>
+                            <div class="testimonial-rating">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text lang" key="testimonial2">My Renault radio was locked after battery replacement. These guys provided the code quickly and it worked perfectly. Very professional!</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">VI</div>
+                        <div>
+                            <div class="testimonial-author">Vlad Ionescu</div>
+                            <div class="testimonial-location">Bucharest, Romania</div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text lang" key="testimonial3">I was skeptical at first but they delivered my BMW radio code as promised. Great communication and fast service. Will use again if needed.</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">KB</div>
+                        <div>
+                            <div class="testimonial-author">Karim Belkacem</div>
+                            <div class="testimonial-location">Algiers, Algeria</div>
+                            <div class="testimonial-rating">★★★★☆</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text lang" key="testimonial4">Quick response and the code worked on my Peugeot 308. Price was very reasonable compared to other services. Thank you!</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">NA</div>
+                        <div>
+                            <div class="testimonial-author">Nadia Amrani</div>
+                            <div class="testimonial-location">Casablanca, Morocco</div>
+                            <div class="testimonial-rating">★★★★★</div>
+                        </div>
+                    </div>
+                    <p class="testimonial-text lang" key="testimonial5">Excellent service! My Mercedes radio was locked for weeks until I found this service. Code arrived in my email within 15 minutes. Very happy!</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="contact-section">
+            <h2 class="section-title lang" key="get_your_code">Get Your Radio Code</h2>
+            <p class="lang" key="contact_text">Contact us via WhatsApp to get your car radio code quickly and easily. We're available to help you restore your car stereo functionality.</p>
+            <a href="https://wa.me/message/UC6YT3LRAJSBM1?src=qr" class="btn btn-whatsapp lang" key="contact_whatsapp">Contact on WhatsApp</a>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#brands" class="lang" key="brands">Brands</a>
+                <a href="#pricing" class="lang" key="pricing">Pricing</a>
+                <a href="#testimonials" class="lang" key="testimonials">Testimonials</a>
+                <a href="#contact" class="lang" key="contact">Contact</a>
+            </div>
+            <div class="copyright lang" key="copyright">© 2023 Car Radio Codes. All rights reserved.</div>
+        </div>
+    </footer>
+    
+    <!-- Font Awesome for WhatsApp icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script>
+        // Language translations
+        const translations = {
+            en: {
+                brands: "Brands",
+                pricing: "Pricing",
+                testimonials: "Testimonials",
+                contact: "Contact",
+                hero_title: "Unlock Your Car Radio Today",
+                hero_text: "We provide radio codes for all major car brands. Get your code quickly and easily to restore your car stereo functionality.",
+                get_code: "Get Your Code Now",
+                brands_we_serve: "Brands We Serve",
+                affordable_pricing: "Affordable Pricing",
+                pricing_text: "We offer competitive prices for all car radio codes. Our prices vary depending on the brand and model, ranging from $1 to $10. Get in touch with us for an exact quote for your specific car radio.",
+                fast_service: "Fast service with codes delivered within minutes in most cases!",
+                customer_testimonials: "Customer Testimonials",
+                testimonial1: "Got my Toyota radio code in just 10 minutes! Excellent service and very affordable price. Highly recommended!",
+                testimonial2: "My Renault radio was locked after battery replacement. These guys provided the code quickly and it worked perfectly. Very professional!",
+                testimonial3: "I was skeptical at first but they delivered my BMW radio code as promised. Great communication and fast service. Will use again if needed.",
+                testimonial4: "Quick response and the code worked on my Peugeot 308. Price was very reasonable compared to other services. Thank you!",
+                testimonial5: "Excellent service! My Mercedes radio was locked for weeks until I found this service. Code arrived in my email within 15 minutes. Very happy!",
+                get_your_code: "Get Your Radio Code",
+                contact_text: "Contact us via WhatsApp to get your car radio code quickly and easily. We're available to help you restore your car stereo functionality.",
+                contact_whatsapp: "Contact on WhatsApp",
+                copyright: "© 2023 Car Radio Codes. All rights reserved."
+            },
+            ar: {
+                brands: "العلامات التجارية",
+                pricing: "الأسعار",
+                testimonials: "آراء العملاء",
+                contact: "اتصل بنا",
+                hero_title: "افتح راديو سيارتك اليوم",
+                hero_text: "نوفر رموز الراديو لجميع العلامات التجارية للسيارات. احصل على الرمز الخاص بك بسرعة وسهولة لاستعادة وظيفة ستيريو سيارتك.",
+                get_code: "احصل على الرمز الخاص بك الآن",
+                brands_we_serve: "العلامات التجارية التي نخدمها",
+                affordable_pricing: "أسعار معقولة",
+                pricing_text: "نقدم أسعارًا تنافسية لجميع رموز راديو السيارات. تختلف أسعارنا حسب العلامة التجارية والموديل، تتراوح من 1 دولار إلى 10 دولارات. اتصل بنا للحصول على عرض سعر دقيق لراديو سيارتك المحدد.",
+                fast_service: "خدمة سريعة مع توصيل الرموز في غضون دقائق في معظم الحالات!",
+                customer_testimonials: "آراء العملاء",
+                testimonial1: "حصلت على رمز راديو تويوتا الخاص بي في 10 دقائق فقط! خدمة ممتازة وسعر معقول للغاية. موصى به بشدة!",
+                testimonial2: "تم قفل راديو رينو الخاص بي بعد استبدال البطارية. قدم هؤلاء الرجال الرمز بسرعة وعمل بشكل مثالي. محترف جدا!",
+                testimonial3: "كنت متشككًا في البداية لكنهم قاموا بتسليم رمز راديو بي إم دبليو الخاص بي كما وعدوا. اتصال رائع وخدمة سريعة. سأستخدمها مرة أخرى إذا لزم الأمر.",
+                testimonial4: "رد سريع والرمز يعمل على بيجو 308 الخاص بي. كان السعر معقولًا جدًا مقارنة بالخدمات الأخرى. شكرا لك!",
+                testimonial5: "خدمة ممتازة! كان راديو مرسيدس الخاص بي مقفلاً لأسابيع حتى وجدت هذه الخدمة. وصل الرمز إلى بريدي الإلكتروني في غضون 15 دقيقة. سعيد جدا!",
+                get_your_code: "احصل على رمز الراديو الخاص بك",
+                contact_text: "اتصل بنا عبر واتساب للحصول على رمز راديو سيارتك بسرعة وسهولة. نحن متاحون لمساعدتك في استعادة وظيفة ستيريو سيارتك.",
+                contact_whatsapp: "اتصل عبر واتساب",
+                copyright: "© 2023 رموز راديو السيارات. كل الحقوق محفوظة."
+            }
+        };
+        
+        // Switch language function
+        function switchLanguage(lang) {
+            document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+            document.querySelectorAll('.lang').forEach(element => {
+                const key = element.getAttribute('key');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update active language button
+            document.querySelectorAll('.language-switcher button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+        
+        // Initialize with English
+        document.addEventListener('DOMContentLoaded', function() {
+            switchLanguage('en');
+        });
+    </script>
+</body>
+</html>
